@@ -1,0 +1,21 @@
+/* 1. Import all of Tailwind's styles and utilities */
+@import "tailwindcss";
+
+/* * 2. This line REPLACES "darkMode: 'selector'" in your config file.
+ * It tells Tailwind that any class prefixed with "dark:" should
+ * be applied when an element has the "dark" class.
+ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * 3. Use "@layer base" to apply styles to base elements like 'body'
+ * This is the standard v4 way to set default body styles.
+ */
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+    
+    /* This is just a cleaner Tailwind shorthand for your transition */
+    @apply transition-colors duration-150;
+  }
+}
