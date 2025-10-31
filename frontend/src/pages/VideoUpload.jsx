@@ -46,7 +46,7 @@ const VideoUpload = () => {
       formData.append('email', user.email);
 
       const res = await axios.post(
-        'http://localhost:4000/api/v1/videoupload', // <-- Endpoint changed to 'videoupload'
+        `${import.meta.env.VITE_BASE_URL}/videoupload`, // <-- Endpoint changed to 'videoupload'
         formData,
         {
           headers: {

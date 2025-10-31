@@ -46,7 +46,7 @@ const ImageUpload = () => {
       formData.append('email', user.email);
 
       const res = await axios.post(
-        'http://localhost:4000/api/v1/imageupload', // Make sure this port is correct
+        `${import.meta.env.VITE_BASE_URL}/imageupload`, // Make sure this port is correct
         formData,
         {
           headers: {
